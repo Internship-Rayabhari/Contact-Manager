@@ -1,58 +1,249 @@
 <html>
-    <head>
-        <title>client system</title>
-        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-        <style>
-            .toolbar
-            {
-                background-color: blue;
-                height: 8%;
-            }
-            .toolbar input[type="search"]
-            {
-                
-                width: 500px;
-                background-color: #5A80DE;
-                border: none;height: 25px;
-                box-shadow: 0px 0px 2px 2px #3A64D4;
-                margin-top: 12px;
-                color: white;
-                padding: 13px;
-                padding-left: 25px;
-                margin-left: 50px;
-            }
 
-            ::placeholder
-            {
-                color: white;
+<head>
+    <title>client system</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+        .toolbar {
+            background-color: blue;
+            height: 8%;
+        }
+
+        .rightbar {
+            background-color: #273657;
+            width: 75%;
+            height: 100%;
+        }
+
+        .toolbar input[type="search"] {
+
+            width: 500px;
+            background-color: #5A80DE;
+            border: none;
+            height: 25px;
+            box-shadow: 0px 0px 2px 2px #3A64D4;
+            margin-top: 12px;
+            color: white;
+            padding: 13px;
+            padding-left: 25px;
+            margin-left: 50px;
+        }
+
+        ::placeholder {
+            color: white;
+        }
+
+        .toolbar a {
+            color: #ffffff;
+            font-size: 23px;
+            padding: 10px;
+        }
+
+        .toolbar button {
+            color: white;
+            background-color: #5A80DE;
+            border: none;
+            height: 25px;
+            box-shadow: 0px 0px 2px 2px #3A64D4;
+            margin-top: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .column {
+            float: left;
+            width: 25%;
+            padding-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .row {
+            margin: 10px;
+        }
+
+
+        @media screen and (max-width: 600px) {
+            .column {
+                width: 100%;
+                display: block;
+                margin-bottom: 20px;
             }
-            .toolbar a{
-                color: #ffffff;
-                font-size: 23px;
-                padding: 10px;
-            }
-            .toolbar button{
-                color: white;
-                background-color:  #5A80DE;
-                border: none;
-                height: 25px;
-                box-shadow: 0px 0px 2px 2px #3A64D4;
-                margin-top: 12px;
-            }
-           
-        </style>
-    </head>
-    <body>
-        <div class="toolbar" style="display: flex; ">
-             <a href="#"><i class="fa fa-users" aria-hidden="true" style="margin-left: 30px;"></i></a>
-            <label style="color: white; font-size: 20px; padding-left: 60px; padding-top: 13px;"><b>MANAGE CONTACTS</b></label>
-            
-            <input type="search" placeholder="search contacts" >
-            <button><i class="fa fa-search" aria-hidden="true" ></i></button>
-            <a href="#"><i class="fa fa-th-large" aria-hidden="true" style="margin-left: 50px; margin-top: 3px;"></i></i></a>
-            <a href="#"><i class="fa fa-trash-o" style="margin-left: 40px;margin-top: 2px;"></i></a>
-            <a href="#"><i class="fa fa-download" aria-hidden="true" style="margin-left: 40px;margin-top: 2px;"></i></a>
-            <a href="#"><i class="fa fa-sign-out" aria-hidden="true" style="margin-left: 40px;margin-top: 2px;"></i></a>
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 16px;
+            text-align: center;
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="toolbar" style="display: flex; ">
+        <a href="#"><i class="fa fa-users" aria-hidden="true" style="margin-left: 30px;"></i></a>
+        <label style="color: white; font-size: 20px; padding-left: 60px; padding-top: 13px;"><b>MANAGE
+                CONTACTS</b></label>
+
+        <input type="search" placeholder="search contacts">
+        <button><i class="fa fa-search" aria-hidden="true"></i></button>
+        <a href="#"><i onclick="gridView()" class="fa fa-th-large" aria-hidden="true"
+                style="margin-left: 50px; margin-top: 3px;"></i></i></a>
+        <a href="#"><i class="fa fa-trash-o" style="margin-left: 40px;margin-top: 2px;"></i></a>
+        <a href="#"><i class="fa fa-download" aria-hidden="true" style="margin-left: 40px;margin-top: 2px;"></i></a>
+        <a href="#"><i class="fa fa-sign-out" aria-hidden="true" style="margin-left: 40px;margin-top: 2px;"></i></a>
+    </div>
+
+    <div id="gridView" style="display: none;">
+        <div class="row">
+            <div class="column">
+                <div class="card" onclick="sideBar()">
+                    <a href="#"> <i class="fa fa-user-circle-o" aria-hidden="true"
+                            style="color: gray; font-size: 45px; margin-top: 20px;"></i></a>
+                    <p>Pavan</p>
+                    <p>Engineer</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <a href="#"> <i class="fa fa-user-circle-o" aria-hidden="true"
+                            style="color: gray; font-size: 45px; margin-top: 20px;"></i></a>
+
+                    <p>dfs</p>
+                    <p>sdf</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <a href="#"> <i class="fa fa-user-circle-o" aria-hidden="true"
+                            style="color: gray; font-size: 45px; margin-top: 20px;"></i></a>
+
+                    <p>dfs</p>
+                    <p>sdf</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <a href="#"> <i class="fa fa-user-circle-o" aria-hidden="true"
+                            style="color: gray; font-size: 45px; margin-top: 20px;"></i></a>
+
+                    <p>dfs</p>
+                    <p>sdf</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <a href="#"> <i class="fa fa-user-circle-o" aria-hidden="true"
+                            style="color: gray; font-size: 45px; margin-top: 20px;"></i></a>
+
+                    <p>dfs</p>
+                    <p>sdf</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <a href="#"> <i class="fa fa-user-circle-o" aria-hidden="true"
+                            style="color: gray; font-size: 45px; margin-top: 20px;"></i></a>
+
+                    <p>dfs</p>
+                    <p>sdf</p>
+                </div>
+            </div>
+
         </div>
-    </body>
+    </div>
+    <div id="sidebar" style="display: none;">
+        <div class="rightbar" style="display: flex; flex-direction: column;">
+            <div style="background-color: #34425F; height: 16%;display: flex; ">
+                <a href="#"> <i class="fa fa-user-circle-o" aria-hidden="true"
+                        style="color: gray; font-size: 45px; margin-top: 20px;margin-left: 30px;"></i></a>
+                <div style="margin-left: 5%; color: white; margin-top: 30px;">
+                    Abctdafsfdafd
+                    sadfkfhkdkjs institute
+                </div>
+            </div>
+            <div style="background-color: #34425F; height: 4%; display: flex;">
+                <button
+                    style="color: white; margin-left: 20%; background-color:#34425F ; border: none; font-size: 14px;">Details</button>
+                <button
+                    style="color: white; margin-left: 19%; background-color:#34425F ; border: none; font-size: 14px;">Activity</button>
+            </div>
+
+            <div style="display: flex; flex-direction: column;">
+                <div style="color: white; display: flex; flex-direction: column;">
+                    <p style="margin-left: 22px;"><b style="font-size: 13px;">First Name</b><input type="text"
+                            style="width: 58%; background-color:  #273657; border-top: none; border-left: none; border-right: none; margin-left: 10%; ">
+                    </p>
+                </div>
+
+                <div style="color: white; display: flex; flex-direction: column;">
+                    <p style="margin-left: 22px;"><b style="font-size: 13px;">Last Name</b><input type="text"
+                            style="width: 58%; background-color:  #273657; border-top: none; border-left: none; border-right: none; margin-left: 11%; ">
+                    </p>
+                </div>
+
+                <div style="color: white; display: flex; flex-direction: column;">
+                    <p style="margin-left: 22px;"><b style="font-size: 13px;">Email</b><input type="email"
+                            style="width: 58%; background-color:  #273657; border-top: none; border-left: none; border-right: none; margin-left: 20%; ">
+                    </p>
+                </div>
+
+                <div style="color: white; display: flex; flex-direction: column;">
+                    <p style="margin-left: 22px;"><b style="font-size: 13px;">Phone</b><input type="number"
+                            style="width: 58%; background-color:  #273657; border-top: none; border-left: none; border-right: none; margin-left: 19%; ">
+                    </p>
+                </div>
+                <div style="color: white; display: flex; flex-direction: column;">
+                    <p style="margin-left: 22px;"><b style="font-size: 13px;">Address</b><input type="text"
+                            style="width: 58%; background-color:  #273657; border-top: none; border-left: none; border-right: none; margin-left: 15%; ">
+                    </p>
+                </div>
+            </div>
+            <textarea
+                style="margin-left: 22px; margin-right: 13px; margin-top: 60px;border:1px solid #34425F ; height: 45px; background-color: #34425F; padding-left: 6px;padding-top: 6px; color: gray; font-size: 12px;">Add a note</textarea>
+
+
+            <button
+                style="margin-right: 13px; margin-left: 22px; height: 30px; margin-top: 10%; color: white; background-color: #3B6CDA; border: none;">Edit
+                Contact</button>
+
+        </div>
+    </div>
+
+
+    <script>
+
+        function gridView() {
+            var x = document.getElementById("gridView");
+            console.log(x)
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+        function sideBar() {
+            var y = document.getElementById("sidebar");
+            if (y.style.display === "none") {
+                y.style.display = "block";
+            } else {
+                y.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
 </html>
