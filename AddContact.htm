@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+  
+  <!--meta name="viewport" content="width=device-width, initial-scale=1"-->
+
+  <link rel="stylesheet" href="Registration Page1.css">
+  <script src="Registration Page.js"></script>
+</head>
+
+<body >
+
+  <!-- <form name="Registration Form"> -->
+
+    <div class="container">
+      <h1>New Contact</h1>
+      <p>Please enter details.</p>
+      <hr>
+
+      <label for="fname"><b>First Name</b></label><br>
+      <input type="text" placeholder="Enter  First Name" id="FNAME" name="fname"><br>
+     
+      <p style="float:right">Upload photo
+        <input type="file"  accept="image/*" name="image" id="file" style="display: none;">
+      <br><br>
+     
+      <label for="lname"><b>Last Name</b></label><br>
+      <input type="text" placeholder="Enter  Last Name" id="LNAME" name="lname"><br>
+      <div1 class ="error" id="nameErrID"></div1>
+
+      <br><br>
+
+      <label for="email"><b>Email</b></label><br>
+      <input type="text" placeholder="Enter Email" id="EMAIL" name="email"><br>
+      <div1 class="error" id="emailErrID"></div1>
+
+      <br><br>
+      <label for="phone"><b>Phone</b></label><br>
+      <input type="number" placeholder="Enter Phone Number" id="PWD" name="pwd"><br>
+      <div1 class="error" id="phoneErrID"></div1>
+
+      <br><br>
+      <label for="cpwd"><b>Address</b></label><br>
+      <input type="text" placeholder="Address" id="CPWD" name="cpwd"><br>
+      <div1 class="error" id="cpErrID"></div1>
+
+     <br><br>
+     <b>Company</b><br>
+     <input type="text" placeholder="Company" name="company"><br>
+     <hr>
+
+      <input type="submit" class="registerbtn" value="ADD CONTACT" onclick="validation()"></input>
+    </div>
+
+    
+
+  <!-- </form> -->
+
+  
+
+
+</body>
+
+</html>
