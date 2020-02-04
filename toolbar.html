@@ -94,7 +94,7 @@
 
         <input type="search" placeholder="search contacts">
         <button><i class="fa fa-search" aria-hidden="true"></i></button>
-        <a href="#"><i onclick="gridView()" class="fa fa-th-large" aria-hidden="true"
+        <a href="#"><i onclick="gridView();changeIcon(this)" class="fa fa-th-large" aria-hidden="true"
                 style="margin-left: 50px; margin-top: 3px;"></i></i></a>
         <a href="#"><i class="fa fa-trash-o" style="margin-left: 40px;margin-top: 2px;"></i></a>
         <a href="#"><i class="fa fa-download" aria-hidden="true" style="margin-left: 40px;margin-top: 2px;"></i></a>
@@ -170,7 +170,7 @@
                 <a href="#"> <i class="fa fa-user-circle-o" aria-hidden="true"
                         style="color: gray; font-size: 45px; margin-top: 20px;margin-left: 30px;"></i></a>
                 <div style="margin-left: 5%; color: white; margin-top: 30px;">
-                    Abctdafsfdafd
+                    pavan kumar S
                     sadfkfhkdkjs institute
                 </div>
             </div>
@@ -226,6 +226,7 @@
     <script>
 
         function gridView() {
+
             var x = document.getElementById("gridView");
             console.log(x)
             if (x.style.display === "none") {
@@ -233,6 +234,10 @@
             } else {
                 x.style.display = "none";
             }
+        }
+
+        function changeIcon(x) {
+            x.classList.toggle("fa-list");
         }
 
         function sideBar() {
