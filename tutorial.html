@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+  <button onclick='addContact("Shetal","9986487543")'>addContact</button>
+<div id='contactsDisplayArea'
+     style="display:flex"><div>
+  <div id='sideBar' style="width:400px;position:absolute;background:#ebebeb;height:100%;
+right:0px;display:none">
+  test
+  </div>
+</body>
+<script>
+var contacts=[]
+function toggleSidebar(status){
+  
+}
+
+//contaact structure:  {"name":"some name","phone:'5589485456"}
+
+
+function renderContacts(){
+  console.log(contacts)
+  var htmlFormattedString=''
+  for(var i=0;i<contacts.length;i++){
+
+    var contactStringData=(contacts[i].name)
+
+    htmlFormattedString+='<div onClick="alert(\''+
+      contactStringData
+      +'\')" style="padding:5px;border-bottom:1px solid #ccc">Name: <b>'+contacts[i]['name']+'</b>, Phone: '+contacts[i]['phone']+"</div>"
+  }
+  document.getElementById('contactsDisplayArea').innerHTML=htmlFormattedString
+}
+
+function updateSidebar(){
+  
+}
+
+function addContact(name,phone){
+  //TO-DO add validations
+  contacts.push({"name":name,"phone":phone})
+  renderContacts()
+}
+</script>
+</html>
