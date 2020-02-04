@@ -30,9 +30,7 @@ function renderContacts(){
 
     var contactStringData=(contacts[i].name)
 
-    htmlFormattedString+='<div onClick="alert(\''+
-      contactStringData
-      +'\')" style="padding:5px;border-bottom:1px solid #ccc">Name: <b>'+contacts[i]['name']+'</b>, Phone: '+contacts[i]['phone']+"</div>"
+    htmlFormattedString+='<div onClick="alert(\''+contactStringData+'\')" style="padding:5px;border-bottom:1px solid #ccc">Name: <b>'+contacts[i]['name']+'</b>, Phone: '+contacts[i]['phone']+"</div>"
   }
   document.getElementById('contactsDisplayArea').innerHTML=htmlFormattedString
 }
