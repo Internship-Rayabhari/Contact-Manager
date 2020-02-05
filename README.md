@@ -1,4 +1,4 @@
-# Contact-Manager
+# Contact-Manager-Application
 Development of Contact Manager Web Application
 
 Project By:
