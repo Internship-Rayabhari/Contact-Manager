@@ -83,6 +83,11 @@
             text-align: center;
             background-color: #f1f1f1;
         }
+
+        #main {
+            transition: margin-left .5s;
+            padding: 16px;
+        }
     </style>
 </head>
 
@@ -100,79 +105,82 @@
         <a href="#"><i class="fa fa-download" aria-hidden="true" style="margin-left: 40px;margin-top: 2px;"></i></a>
         <a href="#"><i class="fa fa-sign-out" aria-hidden="true" style="margin-left: 40px;margin-top: 2px;"></i></a>
     </div>
-
-    <div id="gridView" style="display: none;">
-        <div class="row">
-            <div class="column">
-                <div class="card" onclick="sideBar()">
-                    <a href="#"> <i class="fa fa-user-circle-o" aria-hidden="true"
-                            style="color: gray; font-size: 45px; margin-top: 20px;"></i></a>
-                    <p>Pavan</p>
-                    <p>Engineer</p>
+    <div id="main">
+        <div id="gridView" style="display: none;">
+            <div class="row">
+                <div class="column">
+                    <div class="card" onclick="openNav()">
+                        <a href="#"> <i class="fa fa-user-circle-o" aria-hidden="true"
+                                style="color: gray; font-size: 45px; margin-top: 20px;"></i></a>
+                        <p>Pavan</p>
+                        <p>Engineer</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="column">
-                <div class="card">
-                    <a href="#"> <i class="fa fa-user-circle-o" aria-hidden="true"
-                            style="color: gray; font-size: 45px; margin-top: 20px;"></i></a>
+                <div class="column">
+                    <div class="card">
+                        <a href="#"> <i class="fa fa-user-circle-o" aria-hidden="true"
+                                style="color: gray; font-size: 45px; margin-top: 20px;"></i></a>
 
-                    <p>dfs</p>
-                    <p>sdf</p>
+                        <p>Vishnu</p>
+                        <p>Engineer</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="column">
-                <div class="card">
-                    <a href="#"> <i class="fa fa-user-circle-o" aria-hidden="true"
-                            style="color: gray; font-size: 45px; margin-top: 20px;"></i></a>
+                <div class="column">
+                    <div class="card">
+                        <a href="#"> <i class="fa fa-user-circle-o" aria-hidden="true"
+                                style="color: gray; font-size: 45px; margin-top: 20px;"></i></a>
 
-                    <p>dfs</p>
-                    <p>sdf</p>
+                        <p>Sheetal</p>
+                        <p>Engineer</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="column">
-                <div class="card">
-                    <a href="#"> <i class="fa fa-user-circle-o" aria-hidden="true"
-                            style="color: gray; font-size: 45px; margin-top: 20px;"></i></a>
+                <div class="column">
+                    <div class="card">
+                        <a href="#"> <i class="fa fa-user-circle-o" aria-hidden="true"
+                                style="color: gray; font-size: 45px; margin-top: 20px;"></i></a>
 
-                    <p>dfs</p>
-                    <p>sdf</p>
+                        <p>Ram</p>
+                        <p>Engineer</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="column">
-                <div class="card">
-                    <a href="#"> <i class="fa fa-user-circle-o" aria-hidden="true"
-                            style="color: gray; font-size: 45px; margin-top: 20px;"></i></a>
+                <div class="column">
+                    <div class="card">
+                        <a href="#"> <i class="fa fa-user-circle-o" aria-hidden="true"
+                                style="color: gray; font-size: 45px; margin-top: 20px;"></i></a>
 
-                    <p>dfs</p>
-                    <p>sdf</p>
+                        <p>Kumar</p>
+                        <p>Engineer</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="column">
-                <div class="card">
-                    <a href="#"> <i class="fa fa-user-circle-o" aria-hidden="true"
-                            style="color: gray; font-size: 45px; margin-top: 20px;"></i></a>
+                <div class="column">
+                    <div class="card">
+                        <a href="#"> <i class="fa fa-user-circle-o" aria-hidden="true"
+                                style="color: gray; font-size: 45px; margin-top: 20px;"></i></a>
 
-                    <p>dfs</p>
-                    <p>sdf</p>
+                        <p>Raj</p>
+                        <p>Engineer</p>
+                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
     </div>
-    <div id="sidebar" style="display: none;">
+    <div id="sidebar" style="display: none; margin-left: 80%; margin-top: 0%; padding-top: 0%;">
         <div class="rightbar" style="display: flex; flex-direction: column;">
             <div style="background-color: #34425F; height: 16%;display: flex; ">
                 <a href="#"> <i class="fa fa-user-circle-o" aria-hidden="true"
                         style="color: gray; font-size: 45px; margin-top: 20px;margin-left: 30px;"></i></a>
                 <div style="margin-left: 5%; color: white; margin-top: 30px;">
                     pavan kumar S
-                    sadfkfhkdkjs institute
+                    Bit institute
                 </div>
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+                    style="text-decoration: none; font-size: 30px; color: white; margin-right: 10px;">&times;</a>
             </div>
             <div style="background-color: #34425F; height: 4%; display: flex;">
                 <button
@@ -240,13 +248,30 @@
             x.classList.toggle("fa-list");
         }
 
-        function sideBar() {
+        /* function sideBar() {
+             var y = document.getElementById("sidebar");
+             if (y.style.display === "none") {
+                 y.style.display = "block";
+             } else {
+                 y.style.display = "none";
+             }
+             
+         }*/
+        function openNav() {
             var y = document.getElementById("sidebar");
             if (y.style.display === "none") {
                 y.style.display = "block";
             } else {
                 y.style.display = "none";
             }
+            document.getElementById("sidebar").style.width = "350px";
+            document.getElementById("main").style.marginRight = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("sidebar").style.display = "none";
+            document.getElementById("sidebar").style.width = "0";
+            document.getElementById("main").style.marginRight = "0";
         }
     </script>
 </body>
