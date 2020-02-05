@@ -1,7 +1,7 @@
 <head>
     <title>client system</title>
     <link rel="stylesheet" href="DisplayContacts.css">
-    <script src= "AddContact.js"></script>
+    <script src="AddContact.js"></script>
     <script src="DisplayContacts.js"></script>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -235,12 +235,14 @@
     <script>
 
         function gridView() {
-
+            var y = document.getElementById("ListView")
             var x = document.getElementById("gridView");
             console.log(x)
             if (x.style.display === "none") {
+                y.style.display = "none"
                 x.style.display = "block";
             } else {
+                y.style.display = "block"
                 x.style.display = "none";
             }
         }
@@ -279,7 +281,7 @@
 
     <!--Displaying Contacts-->
 
-    <div id="ListView" class="displayContactsDiv" style:"display:block">
+    <div id="ListView" class="displayContactsDiv" style="display: block;">
         <table class="contactsTable" style="display: flex;">
             <th class="displayContactsth">
                 <b>
@@ -295,7 +297,7 @@
 
             </th>
             <tr>
-                <td><button class="contactButton" type="button">
+                <td><button class="contactButton" type="button" onclick="openNav()">
                         <div class="flexcontainer">
                             <div1 id="imgid"></div1>
                             <div2 id="fnameid"></div2>
@@ -310,24 +312,24 @@
 
         </table>
     </div>
-    <script>
-          function changetogridview() {
-             var y = document.getElementById("ListView");
-             if (y.style.display === "block") {
-                 y.style.display = "none";
-             } else {
-                 y.style.display = "block";
-             }
-             
-         }
-    </script>
+
     <div id='contactsDisplayArea' style="display:flex; flex-direction:column">
         <div>
 
             <a href="AddContact.htm"><i class="fa fa-plus-circle" aria-hidden="true"
                     style="  position: absolute; right: 20px; bottom:20px; font-size: xxx-large; color: orange"></i></a>
             <script src="DisplayContacts.js"> </script>
+            <script>
+                function changetogridview() {
+                    var y = document.getElementById("ListView");
+                    if (y.style.display === "block") {
+                        y.style.display = "none";
+                    } else {
+                        y.style.display = "block";
+                    }
 
+                }
+            </script>
 
 
 </body>
