@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <title>New Login page</title>
+    <script src="CMLoginPage.js">
+
+    </script>
+    <link rel="stylesheet" href="CMLoginPage.css">
+</head>
+
+<body style="background-image: url(ContactBG.jpg); background-size: 100% 100%;">
+    <center>
+    
+
+        <br><br><br>
+
+        <p style="color: black"><b>
+            <font face="Sans Serif" size="70px">Welcome back!</font>
+            </b>
+        </p>
+        <div>
+            <div1>
+                <input type="text" placeholder="Email address" class="email" id="EMAIL"></input>
+                <div2 align="left" class="error" id="emailErrID"></div2>
+                <br>
+                <input type="password" placeholder="Password" class="pass" id="PASS"></input><br>
+                <div2 class="error" id="passErrID" align="left"></div2>
+            </div1>
+            <input type="submit" onclick="loginValidate()" class="login" style="color:white "></input>
+        </div>
+
+        <div1 class="flex-container">
+            <div2>
+                
+               <button type="button" 
+               
+               class="CreateAccount" onclick="openRegistrationPage()" >Don't have an account? <b>Get started.</b></button>
+            </div2>
+
+        </div1>
+
+        </font>
+   
+</center>
+</body>
+
+</html>
